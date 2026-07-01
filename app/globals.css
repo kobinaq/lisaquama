@@ -1,0 +1,50 @@
+:root {
+  --blacktop: #0b0b0a;
+  --ink: #15120e;
+  --bone: #f3eee3;
+  --amber: #ffa400;
+  --ember: #c1440e;
+  --cyan: #3ad6ff;
+  --concrete: #8c8578;
+  --moss: #596b4d;
+  --line: rgba(243, 238, 227, 0.13);
+  --font-display: "Arial Narrow", Impact, Haettenschweiler, sans-serif;
+  --font-sans: "Trebuchet MS", Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--blacktop);
+}
+
+body {
+  margin: 0;
+  overflow-x: hidden;
+  background: var(--blacktop);
+  color: var(--bone);
+  font-family: var(--font-sans), Arial, sans-serif;
+}
+
+a {
+  color: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  border: 0;
+}
+
+::selection {
+  background: var(--amber);
+  color: var(--blacktop);
+}
