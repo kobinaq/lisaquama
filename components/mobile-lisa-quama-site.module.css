@@ -2,7 +2,7 @@
   width: min(100%, 430px);
   min-height: 100vh;
   margin: 0 auto;
-  overflow: hidden;
+  overflow-x: hidden;
   background: var(--blacktop);
   color: var(--bone);
   box-shadow: 0 0 80px rgba(0, 0, 0, 0.42);
@@ -19,6 +19,7 @@
   border-bottom: 1px solid var(--line);
   background: rgba(11, 11, 10, 0.88);
   backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
 }
 
 .topNav a,
@@ -50,7 +51,6 @@
   width: max(100vw, 177.78vh);
   height: max(100vh, 56.25vw);
   border: 0;
-  filter: grayscale(0.65) contrast(1.14) brightness(0.72);
   pointer-events: none;
   transform: translate(-50%, -50%);
 }
@@ -135,6 +135,8 @@
 .reelCard {
   position: relative;
   display: block;
+  height: 292px;
+  min-height: 292px;
   aspect-ratio: 9 / 16;
   overflow: hidden;
   border: 1px solid rgba(243, 238, 227, 0.2);
@@ -144,10 +146,19 @@
     linear-gradient(145deg, #120f0d, #42210c 45%, #091718);
   color: var(--bone);
   text-decoration: none;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  transition: transform 180ms ease;
 }
 
 .reelCard:nth-child(odd) {
   margin-top: 22px;
+}
+
+.reelCard:active,
+.classCard:active,
+.workCard:active {
+  transform: scale(0.98) !important;
 }
 
 .reelPoster,
@@ -163,7 +174,8 @@
 }
 
 .reelPoster {
-  filter: grayscale(0.48) contrast(1.14) brightness(0.84);
+  z-index: 1;
+  background-color: rgba(255, 164, 0, 0.14);
 }
 
 .film {
@@ -171,7 +183,6 @@
   background:
     linear-gradient(to top, rgba(0, 0, 0, 0.72), transparent 46%),
     repeating-linear-gradient(to bottom, rgba(243, 238, 227, 0.06) 0 1px, transparent 1px 5px);
-  mix-blend-mode: screen;
 }
 
 .playBadge {
@@ -225,6 +236,7 @@
 .classCard {
   position: relative;
   display: block;
+  height: 230px;
   min-height: 210px;
   overflow: hidden;
   border: 1px solid rgba(243, 238, 227, 0.2);
@@ -238,7 +250,7 @@
 
 .classThumb {
   background-size: cover;
-  filter: grayscale(0.52) brightness(0.75);
+  background-color: rgba(58, 214, 255, 0.1);
 }
 
 .classCard span:last-child {
@@ -261,6 +273,8 @@
 
 .storyImage {
   position: relative;
+  height: 430px;
+  min-height: 360px;
   aspect-ratio: 3 / 4;
   overflow: hidden;
   border-radius: 6px;
@@ -272,7 +286,7 @@
 .storyImage span,
 .workImage {
   background-size: cover;
-  filter: grayscale(0.18) contrast(1.08) brightness(0.85);
+  background-color: rgba(255, 164, 0, 0.12);
 }
 
 .storyQuote {
@@ -296,6 +310,8 @@
 
 .workCard {
   position: relative;
+  display: block;
+  height: 250px;
   min-height: 230px;
   overflow: hidden;
   border: 1px solid rgba(243, 238, 227, 0.2);
@@ -305,6 +321,9 @@
     linear-gradient(135deg, #0e0d0c, #4b3320 52%, #151b22);
   color: var(--bone);
   text-decoration: none;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  transition: transform 180ms ease;
 }
 
 .workCard small,

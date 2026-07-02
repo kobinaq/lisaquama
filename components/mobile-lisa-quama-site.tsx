@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { motion } from "motion/react";
 import { ArrowRight, Check, Mail, Play, Send } from "lucide-react";
 import {
   danceClasses,
@@ -65,16 +64,11 @@ function MobileHero() {
         title={heroCopy.video.label}
       />
       <div className={styles.heroShade} />
-      <motion.div
-        className={styles.heroCopy}
-        initial={{ y: 0 }}
-        animate={{ y: 0 }}
-        transition={{ duration: 0.55 }}
-      >
+      <div className={styles.heroCopy}>
         <p>{heroCopy.eyebrow}</p>
         <h1>{heroCopy.name}</h1>
         <span>{heroCopy.body}</span>
-      </motion.div>
+      </div>
     </section>
   );
 }
@@ -85,16 +79,13 @@ function MobileReel() {
       <SectionLabel number="01" title="The reel" />
       <div className={styles.reelList}>
         {reelItems.map((item, index) => (
-          <motion.a
+          <a
             className={styles.reelCard}
             href={item.href}
             key={item.href}
             rel="noreferrer"
             target="_blank"
-            initial={{ rotate: index % 2 ? 1 : -1 }}
-            whileInView={{ rotate: index % 2 ? 1 : -1 }}
-            viewport={{ once: true, amount: 0.25 }}
-            whileTap={{ scale: 0.98 }}
+            style={{ transform: `rotate(${index % 2 ? 1 : -1}deg)` }}
           >
             <span
               aria-label={item.imageAlt}
@@ -107,7 +98,7 @@ function MobileReel() {
               <Play size={13} fill="currentColor" />
             </span>
             <strong>{item.title}</strong>
-          </motion.a>
+          </a>
         ))}
       </div>
     </section>
@@ -166,14 +157,13 @@ function MobileWork() {
       <SectionLabel number="03" title="Selected work" />
       <div className={styles.workStack}>
         {selectedWork.map((work, index) => (
-          <motion.a
+          <a
             className={styles.workCard}
             href={work.href}
             key={work.title}
             rel="noreferrer"
             target="_blank"
-            initial={{ rotate: index % 2 ? 1.5 : -1.5 }}
-            whileTap={{ scale: 0.98, rotate: 0 }}
+            style={{ transform: `rotate(${index % 2 ? 1.5 : -1.5}deg)` }}
           >
             <span
               aria-label={work.imageAlt}
@@ -184,7 +174,7 @@ function MobileWork() {
             <span className={styles.film} aria-hidden="true" />
             <small>{work.kicker}</small>
             <strong>{work.title}</strong>
-          </motion.a>
+          </a>
         ))}
       </div>
     </section>
