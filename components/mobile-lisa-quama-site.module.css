@@ -1,0 +1,407 @@
+.shell {
+  width: min(100%, 430px);
+  min-height: 100vh;
+  margin: 0 auto;
+  overflow: hidden;
+  background: var(--blacktop);
+  color: var(--bone);
+  box-shadow: 0 0 80px rgba(0, 0, 0, 0.42);
+}
+
+.topNav {
+  position: sticky;
+  top: 0;
+  z-index: 30;
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  padding: 13px 18px;
+  border-bottom: 1px solid var(--line);
+  background: rgba(11, 11, 10, 0.88);
+  backdrop-filter: blur(18px);
+}
+
+.topNav a,
+.footer a,
+.email {
+  color: var(--concrete);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.hero {
+  position: relative;
+  min-height: 92vh;
+  overflow: hidden;
+  isolation: isolate;
+  display: flex;
+  align-items: flex-end;
+  padding: 24px 20px 58px;
+}
+
+.heroVideo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 0;
+  width: max(100vw, 177.78vh);
+  height: max(100vh, 56.25vw);
+  border: 0;
+  filter: grayscale(0.65) contrast(1.14) brightness(0.72);
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+
+.heroShade,
+.film {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.heroShade {
+  z-index: 1;
+  background:
+    linear-gradient(to top, rgba(11, 11, 10, 0.92), rgba(11, 11, 10, 0.28)),
+    repeating-linear-gradient(to bottom, rgba(243, 238, 227, 0.06) 0 1px, transparent 1px 5px);
+}
+
+.heroCopy {
+  position: relative;
+  z-index: 2;
+}
+
+.heroCopy p,
+.sectionLabel span,
+.routeText,
+.stamp {
+  color: var(--amber);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+.heroCopy h1 {
+  margin: 12px 0 16px;
+  font-family: var(--font-display), Impact, sans-serif;
+  font-size: clamp(66px, 20vw, 96px);
+  font-weight: 900;
+  line-height: 0.78;
+  text-transform: uppercase;
+}
+
+.heroCopy span {
+  display: block;
+  max-width: 29rem;
+  color: rgba(243, 238, 227, 0.86);
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.section,
+.classSection,
+.booking {
+  padding: 54px 18px;
+}
+
+.sectionLabel {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.sectionLabel h2,
+.booking h2 {
+  margin: 0;
+  font-family: var(--font-display), Impact, sans-serif;
+  font-size: clamp(34px, 11vw, 52px);
+  font-weight: 900;
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.reelList {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+  align-items: start;
+}
+
+.reelCard {
+  position: relative;
+  display: block;
+  aspect-ratio: 9 / 16;
+  overflow: hidden;
+  border: 1px solid rgba(243, 238, 227, 0.2);
+  border-radius: 6px;
+  background: #090806;
+  color: var(--bone);
+  text-decoration: none;
+}
+
+.reelCard:nth-child(odd) {
+  margin-top: 22px;
+}
+
+.reelPoster,
+.classThumb,
+.storyImage span,
+.workImage {
+  position: absolute;
+  inset: 0;
+  display: block;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.reelPoster {
+  filter: grayscale(0.48) contrast(1.14) brightness(0.84);
+}
+
+.film {
+  z-index: 2;
+  background:
+    linear-gradient(to top, rgba(0, 0, 0, 0.72), transparent 46%),
+    repeating-linear-gradient(to bottom, rgba(243, 238, 227, 0.06) 0 1px, transparent 1px 5px);
+  mix-blend-mode: screen;
+}
+
+.playBadge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  z-index: 3;
+  display: grid;
+  width: 30px;
+  height: 30px;
+  place-items: center;
+  border: 1px solid rgba(243, 238, 227, 0.48);
+  border-radius: 50%;
+  background: rgba(11, 11, 10, 0.58);
+}
+
+.reelCard strong {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  left: 12px;
+  z-index: 3;
+  font-family: var(--font-display), Impact, sans-serif;
+  font-size: 28px;
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.classSection {
+  position: relative;
+  background: linear-gradient(155deg, #090908, #2d2317 54%, #111d14);
+}
+
+.routeText {
+  margin: 0 0 18px;
+  font-family: var(--font-display), Impact, sans-serif;
+  max-width: 100%;
+  font-size: clamp(38px, 12vw, 54px);
+  font-weight: 900;
+  letter-spacing: 0;
+  line-height: 0.88;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
+}
+
+.classRail {
+  display: grid;
+  gap: 14px;
+}
+
+.classCard {
+  position: relative;
+  display: block;
+  min-height: 210px;
+  overflow: hidden;
+  border: 1px solid rgba(243, 238, 227, 0.2);
+  border-radius: 5px;
+  color: var(--bone);
+  text-decoration: none;
+}
+
+.classThumb {
+  background-size: cover;
+  filter: grayscale(0.52) brightness(0.75);
+}
+
+.classCard span:last-child {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  left: 12px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 42px;
+  background: rgba(11, 11, 10, 0.78);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.storyImage {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  border-radius: 6px;
+  background: #0f0d0b;
+}
+
+.storyImage span,
+.workImage {
+  background-size: cover;
+  filter: grayscale(0.18) contrast(1.08) brightness(0.85);
+}
+
+.storyQuote {
+  margin: 24px 0 16px;
+  font-family: var(--font-display), Impact, sans-serif;
+  font-size: clamp(32px, 10vw, 48px);
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.storyBody {
+  color: var(--concrete);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.workStack {
+  display: grid;
+  gap: 16px;
+}
+
+.workCard {
+  position: relative;
+  min-height: 230px;
+  overflow: hidden;
+  border: 1px solid rgba(243, 238, 227, 0.2);
+  border-radius: 5px;
+  color: var(--bone);
+  text-decoration: none;
+}
+
+.workCard small,
+.workCard strong {
+  position: relative;
+  z-index: 3;
+  display: block;
+  padding-left: 22px;
+}
+
+.workCard small {
+  padding-top: 150px;
+  color: var(--amber);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.workCard strong {
+  max-width: 14ch;
+  margin-top: 4px;
+  font-family: var(--font-display), Impact, sans-serif;
+  font-size: 36px;
+  line-height: 0.9;
+  text-transform: uppercase;
+}
+
+.booking {
+  background: var(--amber);
+  color: var(--blacktop);
+}
+
+.booking .sectionLabel span {
+  color: var(--blacktop);
+}
+
+.booking form {
+  display: grid;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.booking label {
+  display: grid;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.booking input,
+.booking textarea {
+  border: 1px solid rgba(11, 11, 10, 0.28);
+  background: rgba(243, 238, 227, 0.74);
+  color: var(--blacktop);
+  padding: 13px 12px;
+}
+
+.booking button,
+.email {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  min-height: 50px;
+  border: 0;
+  background: var(--blacktop);
+  color: var(--bone);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.success {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.email {
+  width: 100%;
+  margin-top: 16px;
+}
+
+.footer {
+  display: grid;
+  gap: 12px;
+  padding: 28px 18px 36px;
+  border-top: 1px solid var(--line);
+  color: var(--concrete);
+  font-size: 12px;
+}
+
+.footer div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+@media (min-width: 700px) {
+  .shell {
+    margin-block: 26px;
+    border: 1px solid rgba(243, 238, 227, 0.12);
+    border-radius: 28px;
+  }
+}

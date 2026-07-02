@@ -2,7 +2,6 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import {
-  AnimatePresence,
   MotionValue,
   motion,
   useMotionValue,
@@ -43,79 +42,10 @@ const initialForm: FormState = {
 };
 
 export function LisaQuamaSite() {
-  const reduceMotion = useReducedMotion();
-  const [introOpen, setIntroOpen] = useState(false);
-  const [origin, setOrigin] = useState({ x: "50%", y: "50%" });
-  const [beat, setBeat] = useState(1);
-
-  useEffect(() => {
-    if (introOpen || reduceMotion) return;
-    const timer = window.setInterval(() => {
-      setBeat((current) => (current % 4) + 1);
-    }, 480);
-    return () => window.clearInterval(timer);
-  }, [introOpen, reduceMotion]);
-
-  useEffect(() => {
-    document.body.style.overflow = introOpen ? "" : "hidden";
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [introOpen]);
-
-  const openIntro = (clientX?: number, clientY?: number) => {
-    if (clientX && clientY) {
-      setOrigin({
-        x: `${(clientX / window.innerWidth) * 100}%`,
-        y: `${(clientY / window.innerHeight) * 100}%`
-      });
-    }
-    setIntroOpen(true);
-  };
-
   return (
     <>
       <Grain />
       <CustomCursor />
-      <AnimatePresence>
-        {!introOpen && (
-          <motion.div
-            className={styles.threshold}
-            initial={false}
-            exit={
-              reduceMotion
-                ? { opacity: 0 }
-                : {
-                    clipPath: `circle(0% at ${origin.x} ${origin.y})`,
-                    transition: { duration: 0.9, ease: [0.76, 0, 0.24, 1] }
-                  }
-            }
-            onClick={(event) => openIntro(event.clientX, event.clientY)}
-          >
-            <motion.div
-              className={styles.count}
-              key={beat}
-              initial={reduceMotion ? false : { y: 20, opacity: 0 }}
-              animate={{ y: 0, opacity: 1 }}
-              exit={{ y: -20, opacity: 0 }}
-            >
-              {beat}
-            </motion.div>
-            <div className={styles.enterLabel}>TAP TO STEP IN</div>
-            <button
-              className={styles.skip}
-              type="button"
-              onClick={(event) => {
-                event.stopPropagation();
-                openIntro();
-              }}
-            >
-              skip intro
-            </button>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
       <NavSpine />
       <main className={styles.page}>
         <MobileNav />
