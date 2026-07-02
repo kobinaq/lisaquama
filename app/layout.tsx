@@ -14,7 +14,17 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <div className="mobileConstruction" role="status" aria-live="polite">
+          <p>Mobile site under construction</p>
+          <h1>View this experience on desktop.</h1>
+          <span>
+            The Lisa Quama site is being tuned for phones. Please open it on a
+            laptop or desktop for now.
+          </span>
+        </div>
+        {children}
+      </body>
     </html>
   );
 }
