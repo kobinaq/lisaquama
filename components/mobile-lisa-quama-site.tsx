@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { motion, useReducedMotion } from "motion/react";
+import { motion } from "motion/react";
 import { ArrowRight, Check, Mail, Play, Send } from "lucide-react";
 import {
   danceClasses,
@@ -55,8 +55,6 @@ export function MobileLisaQuamaSite() {
 }
 
 function MobileHero() {
-  const reduceMotion = useReducedMotion();
-
   return (
     <section className={styles.hero} id="m-top">
       <iframe
@@ -69,8 +67,8 @@ function MobileHero() {
       <div className={styles.heroShade} />
       <motion.div
         className={styles.heroCopy}
-        initial={reduceMotion ? false : { opacity: 0, y: 24 }}
-        animate={{ opacity: 1, y: 0 }}
+        initial={{ y: 0 }}
+        animate={{ y: 0 }}
         transition={{ duration: 0.55 }}
       >
         <p>{heroCopy.eyebrow}</p>
@@ -82,8 +80,6 @@ function MobileHero() {
 }
 
 function MobileReel() {
-  const reduceMotion = useReducedMotion();
-
   return (
     <section className={styles.section} id="m-reel">
       <SectionLabel number="01" title="The reel" />
@@ -95,8 +91,8 @@ function MobileReel() {
             key={item.href}
             rel="noreferrer"
             target="_blank"
-            initial={reduceMotion ? false : { opacity: 0, y: 22, rotate: index % 2 ? 2 : -2 }}
-            whileInView={{ opacity: 1, y: 0, rotate: index % 2 ? 1 : -1 }}
+            initial={{ rotate: index % 2 ? 1 : -1 }}
+            whileInView={{ rotate: index % 2 ? 1 : -1 }}
             viewport={{ once: true, amount: 0.25 }}
             whileTap={{ scale: 0.98 }}
           >

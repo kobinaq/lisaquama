@@ -139,7 +139,9 @@
   overflow: hidden;
   border: 1px solid rgba(243, 238, 227, 0.2);
   border-radius: 6px;
-  background: #090806;
+  background:
+    radial-gradient(circle at 52% 24%, rgba(255, 164, 0, 0.24), transparent 22%),
+    linear-gradient(145deg, #120f0d, #42210c 45%, #091718);
   color: var(--bone);
   text-decoration: none;
 }
@@ -227,6 +229,9 @@
   overflow: hidden;
   border: 1px solid rgba(243, 238, 227, 0.2);
   border-radius: 5px;
+  background:
+    radial-gradient(circle at 58% 28%, rgba(58, 214, 255, 0.18), transparent 20%),
+    linear-gradient(145deg, #10100f, #362411 52%, #0f1914);
   color: var(--bone);
   text-decoration: none;
 }
@@ -259,7 +264,9 @@
   aspect-ratio: 3 / 4;
   overflow: hidden;
   border-radius: 6px;
-  background: #0f0d0b;
+  background:
+    radial-gradient(circle at 50% 22%, rgba(255, 164, 0, 0.28), transparent 18%),
+    linear-gradient(145deg, #10100f, #362411 52%, #0f1914);
 }
 
 .storyImage span,
@@ -293,6 +300,9 @@
   overflow: hidden;
   border: 1px solid rgba(243, 238, 227, 0.2);
   border-radius: 5px;
+  background:
+    radial-gradient(circle at 62% 38%, rgba(255, 164, 0, 0.2), transparent 21%),
+    linear-gradient(135deg, #0e0d0c, #4b3320 52%, #151b22);
   color: var(--bone);
   text-decoration: none;
 }

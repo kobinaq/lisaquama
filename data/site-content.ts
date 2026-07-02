@@ -39,17 +39,17 @@ export const danceClasses = [
   {
     title: "Dance Class 01",
     href: "https://youtu.be/NPhD0W1fls0?si=XKRTQOlBbruL48-G",
-    imageUrl: "https://img.youtube.com/vi/NPhD0W1fls0/maxresdefault.jpg"
+    imageUrl: "https://img.youtube.com/vi/NPhD0W1fls0/hqdefault.jpg"
   },
   {
     title: "Dance Class 02",
     href: "https://youtu.be/liQrsi-PGlk?si=UsRCQYqSHxkX5ioi",
-    imageUrl: "https://img.youtube.com/vi/liQrsi-PGlk/maxresdefault.jpg"
+    imageUrl: "https://img.youtube.com/vi/liQrsi-PGlk/hqdefault.jpg"
   },
   {
     title: "Dance Class 03",
     href: "https://youtu.be/qt9jUpzuwVs?si=onz4H9cMOEdl8vwI",
-    imageUrl: "https://img.youtube.com/vi/qt9jUpzuwVs/maxresdefault.jpg"
+    imageUrl: "https://img.youtube.com/vi/qt9jUpzuwVs/hqdefault.jpg"
   }
 ];
 
